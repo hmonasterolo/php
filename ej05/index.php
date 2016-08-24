@@ -10,5 +10,5 @@ var_dump($resultado); // 15
 $resultado = calculadora('multiplicar', $a, $b);
 var_dump($resultado); // 50
 $resultado = calculadora('dividir', $a, $b);
-var_dump($resultado); // 3
+var_dump($resultado); // 2
 ?>
