@@ -1,6 +1,19 @@
 <?php
 function calculadora($operacion, $x, $y) {
-	// DEFINIR
+	switch ($operacion) {
+		case 'sumar':
+			return  $x + $y;
+			break;
+		case 'multiplicar':
+			return $x * $y;
+			break;
+		case 'dividir':
+			return $x / $y;
+			break;
+		case 'restar':
+			return $x - $y;
+			break;
+	}
 }
 
 $a = 10;
@@ -11,4 +24,14 @@ $resultado = calculadora('multiplicar', $a, $b);
 var_dump($resultado); // 50
 $resultado = calculadora('dividir', $a, $b);
 var_dump($resultado); // 2
+$resultado = calculadora('restar', $a, $b);
+var_dump($resultado)
+
+
+
+
+
+
+
+
 ?>
