@@ -4,12 +4,12 @@ function area($tipo, $objeto) {
 }
 
 $rectangulo = [
-	$x => 11,
-	$y => 7
+	'x' => 11,
+	'y' => 7
 ];
 
 $circulo = [
-	$r => 4;
+	'r' => 4
 ];
 
 $areaRectangulo = area('rectangulo', $rectangulo);
