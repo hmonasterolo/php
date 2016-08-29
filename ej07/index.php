@@ -9,9 +9,9 @@ function area($tipo, $objeto) {
 		case 'circulo':
 			return pow($objeto['r'], 2) * M_PI;
 			break;
+
 		default:
-			# code...
-			break;
+			return 'error';
 	}
 }
 
@@ -26,7 +26,10 @@ $circulo = [
 
 $areaRectangulo = area('rectangulo', $rectangulo);
 $areaCirculo = area('circulo', $circulo);
+$areatortuga = area('tortuga', $circulo);
 
 var_dump($areaRectangulo);
 var_dump($areaCirculo);
+var_dump($areatortuga);
+
 ?>
