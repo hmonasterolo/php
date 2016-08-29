@@ -13,6 +13,8 @@ function calculadora($operacion, $x, $y) {
 		case 'restar':
 			return $x - $y;
 			break;
+		default:
+			echo 'no es valido';
 	}
 }
 
@@ -26,12 +28,6 @@ $resultado = calculadora('dividir', $a, $b);
 var_dump($resultado); // 2
 $resultado = calculadora('restar', $a, $b);
 var_dump($resultado)
-
-
-
-
-
-
-
+$resultado = calculadora('sorete', $a, $b);
 
 ?>
