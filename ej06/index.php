@@ -1,6 +1,33 @@
 <?php
-function calculadora() {
-	// DEFINIR
+function calculadora($operacion, $x, $y = null) {
+	switch ($operacion) {
+		case 'sumar':
+			return $x + $y;
+		break;
+
+		case 'multiplicar':
+			return $x * $y;
+		break;
+
+		case 'dividir':
+			return $x / $y;
+		break;
+
+		case 'restar';
+			return $x - $y;
+		break;
+
+		case 'potencia':
+			return pow($x, $y);
+		break;
+
+		case 'raiz':
+			return sqrt($x);
+		break;
+
+		default:
+			return 'error';
+	}
 }
 
 $a = 10;
