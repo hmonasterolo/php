@@ -1,20 +1,25 @@
 <?php
 function calculadora($operacion, $x, $y) {
-	switch ($operacion) {
+	switch($operacion) {
+
 		case 'sumar':
 			return  $x + $y;
-			break;
+		break;
+
 		case 'multiplicar':
 			return $x * $y;
-			break;
+		break;
+
 		case 'dividir':
 			return $x / $y;
-			break;
+		break;
+
 		case 'restar':
 			return $x - $y;
-			break;
+		break;
+
 		default:
-			echo 'no es valido';
+			return 'error';
 	}
 }
 
@@ -27,7 +32,7 @@ var_dump($resultado); // 50
 $resultado = calculadora('dividir', $a, $b);
 var_dump($resultado); // 2
 $resultado = calculadora('restar', $a, $b);
-var_dump($resultado)
+var_dump($resultado);
 $resultado = calculadora('sorete', $a, $b);
-
+var_dump($resultado);
 ?>
