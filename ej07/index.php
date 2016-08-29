@@ -1,6 +1,18 @@
 <?php
 function area($tipo, $objeto) {
-	// DEFINIR
+	switch ($tipo) {
+		case 'rectangulo':
+			// return array_product($objeto); no era la idea!
+			return $objeto['x'] * $objeto['y'];
+		break;
+
+		case 'circulo':
+			return pow($objeto['r'], 2) * M_PI;
+			break;
+		default:
+			# code...
+			break;
+	}
 }
 
 $rectangulo = [
