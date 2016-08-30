@@ -1,11 +1,8 @@
 <?php
 include('suma.php');
 
-
-
 $arrayDeNumeros = [9, 5, 41, 11, 28, 47, 31, 49, 43, 27];
 imprimirSumaIncremental($arrayDeNumeros);
-
 
 /*
 Debe imprimir:
