@@ -9,6 +9,6 @@ function imprimirSumaIncremental($x) {
 		echo $suma . '<br />';
 		$cont++;
 }
-
+}
 
 ?>
