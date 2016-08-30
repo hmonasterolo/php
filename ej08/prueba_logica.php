@@ -5,7 +5,6 @@ $cont = 0;
 $suma = 0;
 
 while ($cont<10) {
-	$arrayDeNumeros[$cont];
 	$suma = $arrayDeNumeros[$cont] + $suma;
 	echo $suma . '<br />';
 	$cont++;
