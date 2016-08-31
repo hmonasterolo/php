@@ -1,5 +1,5 @@
 <?php
-include('moneda.php');
+include('moneda2.php');
 
 $veces = 10;
 
