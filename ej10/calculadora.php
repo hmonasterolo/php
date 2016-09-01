@@ -20,7 +20,6 @@ $memoria = [];
 
 function guardarEnMemoria($valor, $posicion = 0) {
 	$GLOBALS['memoria'][$posicion] = $valor;
-
 }
 
 function obtenerMemoria($posicion) {
