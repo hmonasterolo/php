@@ -14,7 +14,8 @@ function devolverMayores($x, $y){
 	}
 	else {
 		sort($x);
-		return array_slice($x, 0, $y);
+		$a = array_reverse($x);
+		return array_slice($a, 0, $y);
 }
 }
 
