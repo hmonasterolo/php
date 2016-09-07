@@ -18,7 +18,7 @@ function devolverMayores($x, $y){
 
 		// $a = array_reverse($x);
 		// return array_slice($a, 0, $y);
-}
+	}
 }
 
 function devolverMenores ($x, $y){
