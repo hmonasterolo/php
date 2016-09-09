@@ -16,11 +16,6 @@ function guardarContacto($nombre, $apellido, $telCasa, $telCelular, $dirCasa, $d
 	];
 	$contacto['mail'] = $mail;
 
-	// Borrar esto
-	echo('<pre>');
-	print_r($contacto);
-	echo('</pre>');
-
 	$GLOBALS['contactos'][$nombre] = $contacto;
 }
 
