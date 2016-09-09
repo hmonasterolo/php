@@ -10,7 +10,7 @@ $stock = [];
 
 // Hacemos las compras
 comprar('cerveza', 100);
-comprar('coca_cola', 10)
+comprar('coca_cola', 20);
 comprar('fernet', 5);
 comprar('naranjas', 30);
 comprar('ron', 2);
