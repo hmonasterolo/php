@@ -1,9 +1,9 @@
 <?php
-
-
 function comprar ($bebida, $cant) {
-	$compras = [];
-	$compras['$bebida'] = $cant;
+
+	/* Estas líneas no hacen nada */
+	// $compras = [];
+	// $compras['$bebida'] = $cant;
 
 	$GLOBALS['stock'][$bebida] = $cant;
 }
@@ -11,30 +11,55 @@ function comprar ($bebida, $cant) {
 function imprimirStock () {
 	echo('<pre>');
 	print_r($GLOBALS['stock']);
-	echo('<pre>');
+	echo('</pre>');
 	echo('<br />');
 }
 
-function prepararTrago () {
-	$ped = $GLOBALS['recetas'][$GLOBALS['trago']];
-	$stock = $GLOBALS ['stock'];
-	foreach ($stock as $trago => $cant) {
-		if(isset($ped[$trago])) {
-			if ($cant - $ped[$trago] >= 0) {
-				$stock [$trago] = $cant - $ped[$trago];
-				$GLOBALS['stock'] = $stock;
-				return true;
-			}
-			else {
+// function prepararTrago () {
+// 	$ped = $GLOBALS['recetas'][$GLOBALS['trago']];
+// 	$stock = $GLOBALS ['stock'];
+// 	foreach ($stock as $trago => $cant) {
+// 		if(isset($ped[$trago])) {
+// 			if ($cant - $ped[$trago] >= 0) {
+// 				$stock [$trago] = $cant - $ped[$trago];
+// 				$GLOBALS['stock'] = $stock;
+// 				return true;
+// 			}
+// 			else {
+// 				return false;
+// 			}
+// 		}
+// 	}
+// }
+
+function prepararTrago($trago) {
+
+	$receta = $GLOBALS['recetas'][$trago];
+
+	// Nos fijamos 1ro. que el trago se pueda hacer (y no empezar a restar ingredientes del stock
+	// para darnos cuenta a la mitad del trago que no podemos hacerlo)
+	foreach($GLOBALS['stock'] as $bebida => $cantidad) {
+		if(isset($receta[$bebida])) {
+			if($cantidad < $receta[$bebida]) {
+				// El trago NO se puede hacer, devolvemos FALSE sin afectar el stock
 				return false;
 			}
 		}
 	}
 
+	// Acá ya sabemos que el trago se puede hacer, sólo tenemos que restar los ingredientes del stock
+	foreach($GLOBALS['stock'] as $bebida => $cantidad) {
+		if(isset($receta[$bebida])) {
+			$stock[$bebida] -= $receta[$bebida];
+		}
+	}
+
+	// Devolvemos TRUE porque hicimos el trago
+	return true;
 }
 
-function nombrarTrago($x) {
-	switch ($x) {
+function nombrarTrago($trago) {
+	switch($trago) {
 		case CERVEZA:
 			return 'Cerveza';
 		break;
@@ -64,6 +89,4 @@ function nombrarTrago($x) {
 		break;
 	}
 }
-
-
 ?>
