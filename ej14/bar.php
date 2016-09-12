@@ -50,8 +50,30 @@ function prepararTrago($trago) {
 	// Acá ya sabemos que el trago se puede hacer, sólo tenemos que restar los ingredientes del stock
 	foreach($GLOBALS['stock'] as $bebida => $cantidad) {
 		if(isset($receta[$bebida])) {
-			$stock[$bebida] -= $receta[$bebida];
+			$GLOBALS['stock'][$bebida] -= $receta[$bebida];
 		}
+	}
+
+	// Devolvemos TRUE porque hicimos el trago
+	return true;
+}
+
+function prepararTrago2($trago) {
+
+	$receta = $GLOBALS['recetas'][$trago];
+
+	// Esta versión es mejor porque iteramos por la receta, y no por TODO el stock que puede ser enorme
+	foreach($receta as $bebida => $cantidad) {
+		// Este if() se lee: "si NO existe $stock[$bebida] o $stock[$bebida] es menor a $cantidad"
+		if(!isset($stock[$bebida]) || $stock[$bebida] < $cantidad) {
+			// El trago NO se puede hacer, devolvemos FALSE sin afectar el stock
+			return false;
+		}
+	}
+
+	// De vuelta, este bucle es más rápido que iterar por el stock entero
+	foreach($receta as $bebida => $cantidad) {
+		$GLOBALS['stock'][$bebida] -= $cantidad;
 	}
 
 	// Devolvemos TRUE porque hicimos el trago
