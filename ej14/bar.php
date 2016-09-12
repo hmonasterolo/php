@@ -33,35 +33,35 @@ function prepararTrago () {
 
 }
 
-function nombrarTrago ($x) {
+function nombrarTrago($x) {
 	switch ($x) {
-		case 0:
-			return 'CERVEZA';
-			break;
-		case 1:
-			return 'CUBA_LIBRE';
-			break;
-		case 2:
-			return 'DESTORNILLADOR';
-			break;
-		case 3:
-			return 'FERNET_CON_COCA';
-			break;
-		case 4:
-			return 'RON';
-			break;
-		case 5:
-			return 'RON_CON_JUGO';
-			break;
-		case 6:
-			return 'VASO_DE_COCA';
-			break;
-		case 7:
-			return 'VASO_DE_JUGO';
-			break;
-		case 8:
-			return 'VODKA';
-			break;
+		case CERVEZA:
+			return 'Cerveza';
+		break;
+		case CUBA_LIBRE:
+			return 'Cuba Libre';
+		break;
+		case DESTORNILLADOR:
+			return 'Destornillador';
+		break;
+		case FERNET_CON_COCA:
+			return 'Fernet con Coca';
+		break;
+		case RON:
+			return 'Ron';
+		break;
+		case RON_CON_JUGO:
+			return 'Ron con Jugo';
+		break;
+		case VASO_DE_COCA:
+			return 'Vaso de Coca';
+		break;
+		case VASO_DE_JUGO:
+			return 'Vaso de Jugo';
+		break;
+		case VODKA:
+			return 'Vodka';
+		break;
 	}
 }
 
