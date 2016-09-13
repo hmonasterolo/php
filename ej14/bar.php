@@ -32,40 +32,40 @@ function imprimirStock () {
 // 	}
 // }
 
-function prepararTrago($trago) {
+// function prepararTrago($trago) {
 
-	$receta = $GLOBALS['recetas'][$trago];
+//	$receta = $GLOBALS['recetas'][$trago];
 
 	// Nos fijamos 1ro. que el trago se pueda hacer (y no empezar a restar ingredientes del stock
 	// para darnos cuenta a la mitad del trago que no podemos hacerlo)
-	foreach($GLOBALS['stock'] as $bebida => $cantidad) {
-		if(isset($receta[$bebida])) {
-			if($cantidad < $receta[$bebida]) {
+//	foreach($GLOBALS['stock'] as $bebida => $cantidad) {
+//		if(isset($receta[$bebida])) {
+//			if($cantidad < $receta[$bebida]) {
 				// El trago NO se puede hacer, devolvemos FALSE sin afectar el stock
-				return false;
-			}
-		}
-	}
+//				return false;
+//			}
+//		}
+//	}
 
 	// Acá ya sabemos que el trago se puede hacer, sólo tenemos que restar los ingredientes del stock
-	foreach($GLOBALS['stock'] as $bebida => $cantidad) {
-		if(isset($receta[$bebida])) {
-			$GLOBALS['stock'][$bebida] -= $receta[$bebida];
-		}
-	}
+//	foreach($GLOBALS['stock'] as $bebida => $cantidad) {
+//		if(isset($receta[$bebida])) {
+//			$GLOBALS['stock'][$bebida] -= $receta[$bebida];
+//		}
+//	}
 
 	// Devolvemos TRUE porque hicimos el trago
-	return true;
-}
+//	return true;
+//}
 
-function prepararTrago2($trago) {
+function prepararTrago($trago) {
 
 	$receta = $GLOBALS['recetas'][$trago];
 
 	// Esta versión es mejor porque iteramos por la receta, y no por TODO el stock que puede ser enorme
 	foreach($receta as $bebida => $cantidad) {
 		// Este if() se lee: "si NO existe $stock[$bebida] o $stock[$bebida] es menor a $cantidad"
-		if(!isset($stock[$bebida]) || $stock[$bebida] < $cantidad) {
+		if(!isset($GLOBALS['stock'][$bebida]) || $GLOBALS['stock'][$bebida] < $cantidad) {
 			// El trago NO se puede hacer, devolvemos FALSE sin afectar el stock
 			return false;
 		}
