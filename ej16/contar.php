@@ -6,8 +6,9 @@ function contarPalabras ($frase) {
 
 
 function contarPalabras2 ($frase) {
-	$cant = explode(' ', $frase);
-	return count($cant);
+//	$cant = explode(' ', $frase);
+//	return count($cant);
+	return count(explode(' ', $frase));
 }
 
 
